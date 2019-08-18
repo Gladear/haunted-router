@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "lib",
+    "strict": true,
+    "declaration": true,
+    "declarationDir": "typings",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext"
+  },
+  "include": [
+    "src/*"
+  ]
+}

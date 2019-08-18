@@ -1,0 +1,25 @@
+{
+  "name": "haunted-router",
+  "version": "0.0.1",
+  "description": "A client-side router for Haunted",
+  "main": "lib/haunted-router.js",
+  "module": "lib/haunted-router.js",
+  "typings": "typings/haunted-router.d.ts",
+  "scripts": {
+    "build": "make"
+  },
+  "peerDependencies": {
+    "haunted": "^4.0.0"
+  },
+  "keywords": [
+    "router",
+    "haunted",
+    "web-components"
+  ],
+  "author": "Enzo Baldisserri",
+  "license": "MIT",
+  "devDependencies": {
+    "@matthewp/compile": "^2.4.3",
+    "typescript": "^3.6.2"
+  }
+}
