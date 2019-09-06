@@ -17,6 +17,20 @@
     "web-components"
   ],
   "author": "Enzo Baldisserri",
+  "files": [
+    "haunted-router.js",
+    "web.js",
+    "lib",
+    "typings"
+  ],
+  "homepage": "https://github.com/Gladear/haunted-router#readme",
+  "bugs": {
+    "url": "https://github.com/Gladear/haunted-router/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gladear/haunted-router"
+  },
   "license": "MIT",
   "devDependencies": {
     "@matthewp/compile": "^2.4.3",
