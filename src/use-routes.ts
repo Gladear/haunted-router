@@ -21,7 +21,7 @@ function createRouteEntry<T>([path, callback]: [string, RouteCallback<T>]): Rout
 
   while (match = paramMatcher.exec(path)) {
     const [name] = match;
-    names.push(name);
+    names.push(name.slice(1));
 
     pattern += path.slice(lastIndex, match.index) + '([^/]*)';
     lastIndex = match.index + name.length;
