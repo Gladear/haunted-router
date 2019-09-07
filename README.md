@@ -1,13 +1,29 @@
-# haunted-router
+# Haunted Router for Haunted 🦇 🎃
 
-A client-side router for **Haunted**.
+A client-side router for [**Haunted**](https://github.com/matthewp/haunted).
 
-## How to install
+## Getting started
+
+### Installing
 
 Using npm:
 ```bash
 npm install --save haunted-router
 ```
+
+### Importing
+
+If using a bundler, **Haunted Router** can be imported like any other library:
+```javascript
+import { useRoutes, useTitle, navigateTo, replaceTo } from 'haunted-router';
+```
+
+**Haunted Router** can also work directly in the browser without using any build tools. Simply import the `haunted-router.js` bundle. Here's an example with unpkg:
+```javascript
+import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router@^0.0.1/haunted-router.js';
+```
+
+If you install **Haunted Router** locally, this build is located at `node_modules/haunted-router/haunted-router.js`.
 
 ## Usage
 
@@ -22,6 +38,7 @@ The value returned by the hook is the same as the one returned by the function.
 Example:
 ```javascript
 import { useRoutes } from 'haunted-router';
+// Where using lit-html as an example, but any rendering library compatible with haunted will do
 import { html, nothing } from 'lit-html';
 
 function App() {
@@ -41,8 +58,8 @@ function App() {
 ### Define the title
 
 The title of the document can be modified using the `useTitle` hook.
-It's only parameter is a string, and it does not return anything.
-The title is brought back to the original when the component is unloaded.
+It's only parameter is a string, and it doesn't return anything.
+The title is brought back to the original when the component is disconnected from the DOM.
 
 Example:
 ```javascript
@@ -65,7 +82,6 @@ There are two ways to navigate using **haunted-router**:
 
 Example:
 ```javascript
-// Where using lit-html as an example, but any rendering library compatible with haunted will do
 import { html } from 'lit-html';
 
 return html`
@@ -141,17 +157,18 @@ _account.js_
 ```javascript
 import { component } from 'haunted';
 import { useRoutes } from 'haunted-router';
-import { html } from 'lit-html';
+import { html, nothing } from 'lit-html';
 
 import { accountRoutes } from './router.js';
 
 const PageAccount = () => {
   useTitle('My Account');
 
-  const route = useRoutes(accountRoutes);
+  const tabResult = useRoutes(accountRoutes, nothing);
 
   return html`
     <h1>Account</h1>
+    ${tabResult}
   `;
 };
 
