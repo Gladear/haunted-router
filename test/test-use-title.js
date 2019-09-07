@@ -17,7 +17,7 @@ describe('useTitle', () => {
     let teardown = attach(tag);
     await cycle();
 
-    assert.strictEqual(document.title, title, 'Is redefined');
+    assert.strictEqual(document.title, title, 'The title wasn\'t modified');
 
     teardown();
   });
@@ -40,6 +40,6 @@ describe('useTitle', () => {
     teardown();
     await cycle();
 
-    assert.strictEqual(document.title, original, 'Is reverted back to the original title');
+    assert.strictEqual(document.title, original, 'The title wasn\'t reverted to the original');
   });
 });

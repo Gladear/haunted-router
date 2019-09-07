@@ -7,30 +7,27 @@ describe('navigateTo', () => {
 
     navigateTo(url);
 
-    assert.strictEqual(location.pathname, url, 'Navigated');
+    assert.strictEqual(location.pathname, url, 'The current location isn\'t the one requested');
   });
 
   it('Modifies the state of the history', () => {
-    const url = '/url-state-test';
     const state = 'My test state for the navigateTo function';
 
-    navigateTo(url, state);
+    navigateTo('/temporary-url', state);
 
-    assert.strictEqual(history.state, state, 'Was modified')
+    assert.strictEqual(history.state, state, 'The state isn\'t the same as the one provided')
   });
 
   it('Creates an entry in the history', async () => {
-    const firstUrl = '/url-original';
-    const secondUrl = '/url-entry-test';
+    const { pathname: original } = location;
 
-    navigateTo(firstUrl);
-    navigateTo(secondUrl);
+    navigateTo('/temporary-url');
 
     const promise = waitPopState();
     history.back();
 
     await promise;
 
-    assert.strictEqual(location.pathname, firstUrl, 'Came back to the first history entry');
+    assert.strictEqual(location.pathname, original, 'The current location isn\'t the same as the original');
   });
 });

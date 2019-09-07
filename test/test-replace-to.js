@@ -7,16 +7,15 @@ describe('replaceTo', () => {
 
     replaceTo(url);
 
-    assert.strictEqual(location.pathname, url, 'Navigated');
+    assert.strictEqual(location.pathname, url, 'The current location isn\'t the one requested');
   });
 
   it('Modifies the state of the history', () => {
-    const url = '/url-state-test';
-    const state = 'My test state for the navigateTo function';
+    const state = 'My test state for the replaceTo function';
 
-    replaceTo(url, state);
+    replaceTo('/temporary-url', state);
 
-    assert.strictEqual(history.state, state, 'Was modified')
+    assert.strictEqual(history.state, state, 'The state isn\'t the same as the one provided')
   });
 
   it('Does not create an entry in the history', async () => {
@@ -34,13 +33,13 @@ describe('replaceTo', () => {
 
     await popState;
 
-    assert.strictEqual(location.pathname, url, 'Came back to the replaced url');
+    assert.strictEqual(location.pathname, url, 'The current location is not the same as the replaced url');
 
     popState = waitPopState();
     history.back();
 
     await popState;
 
-    assert.strictEqual(location.pathname, originalUrl, 'Came back to the original url');
+    assert.strictEqual(location.pathname, originalUrl, 'The current location is not the same as the original');
   });
 });
