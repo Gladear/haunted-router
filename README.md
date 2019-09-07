@@ -77,7 +77,7 @@ function App() {
 ### Navigate
 
 There are two ways to navigate using **haunted-router**:
-- Programatically, using `navigateTo(url, state, stateTitle)` or `replaceTo(url, state, stateTitle)`. `navigateTo` creates an entry in the history, whilst `replaceTo` doesn't.
+- Programatically, using `navigateTo(url, state)` or `replaceTo(url, state)`. `navigateTo` creates an entry in the history, whilst `replaceTo` doesn't.
 - With anchors, using the `router-link` custom element. Add the `replace` attribute to prevent creating an history entry.
 
 Example:
@@ -85,7 +85,7 @@ Example:
 import { html } from 'lit-html';
 
 return html`
-  <a is="router-link" href="/url/to/destination" .state=${{ foo: 'bar' }} stateTitle="Destination page"></a>
+  <a is="router-link" href="/url/to/destination" .state=${{ foo: 'bar' }}></a>
   <a is="router-link" href="/url/to/second-tab" replace></a>
 `;
 
@@ -96,9 +96,7 @@ navigateTo('/url/to/destination', { foo: 'bar' }, 'Destination page');
 replaceTo('/url/to/second-tab');
 
 ```
-`state` can be of any type, and it is optional, along with `stateTitle`.
-
-`stateTitle` is used in `history.pushState` and `history.replaceState`, but is ignored by most browsers at the time of writing. More informations [here](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState#Parameters).
+`state` can be of any type and is optional.
 
 > ⚠️ If you want to use the `router-link` component, you will likely want to be using a polyfill for custom built-in elements, like the lightweight [@ungap/custom-elements-builtin](https://github.com/ungap/custom-elements-builtin). Custom built-in elements are currently unavailable on Edge and Safari.
 
