@@ -6,7 +6,7 @@
   "module": "lib/haunted-router.js",
   "typings": "typings/haunted-router.d.ts",
   "scripts": {
-    "start": "http-server -p 1991",
+    "start": "http-server -p 1991 -c-1",
     "build": "make",
     "preversion": "make",
     "test": "mocha-headless-chrome -f http://localhost:1991/test/test.html"
