@@ -1,6 +1,11 @@
-import { component, html } from 'https://unpkg.com/haunted@beta/haunted.js';
+import haunted from 'https://unpkg.com/haunted@beta/core.js';
+import { html, render } from 'https://unpkg.com/lit-html@^1.0.0/lit-html.js';
+
+// import { component, html } from 'https://unpkg.com/haunted@beta/haunted.js';
 import { useTitle } from '../haunted-router.js';
 import { attach, cycle } from './helpers.js';
+
+const { component } = haunted({ render });
 
 describe('useTitle', () => {
   it('Redefines the title of the document', async () => {
