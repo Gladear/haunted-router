@@ -6,8 +6,10 @@
   "module": "lib/haunted-router.js",
   "typings": "typings/haunted-router.d.ts",
   "scripts": {
+    "start": "http-server -p 1991",
     "build": "make",
-    "preversion": "make"
+    "preversion": "make",
+    "test": "mocha-headless-chrome -f http://localhost:1991/test/test.html"
   },
   "peerDependencies": {
     "haunted": "beta"
@@ -35,6 +37,8 @@
   "license": "MIT",
   "devDependencies": {
     "@matthewp/compile": "^2.4.3",
+    "http-server": "^0.11.1",
+    "mocha-headless-chrome": "^2.0.3",
     "typescript": "^3.6.2"
   }
 }
