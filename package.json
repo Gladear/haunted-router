@@ -9,7 +9,7 @@
     "build": "make"
   },
   "peerDependencies": {
-    "haunted": "^4.0.0"
+    "haunted": "beta"
   },
   "keywords": [
     "router",
