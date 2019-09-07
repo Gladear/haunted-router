@@ -100,6 +100,8 @@ replaceTo('/url/to/second-tab');
 
 `stateTitle` is used in `history.pushState` and `history.replaceState`, but is ignored by most browsers at the time of writing. More informations [here](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState#Parameters).
 
+> ⚠️ If you want to use the `router-link` component, you will likely want to be using a polyfill for custom built-in elements, like the lightweight [@ungap/custom-elements-builtin](https://github.com/ungap/custom-elements-builtin). Custom built-in elements are currently unavailable on Edge and Safari.
+
 ## Complete example
 
 _main.js_
