@@ -11,11 +11,11 @@ lib/*.js: src/*.ts
 
 haunted-router.js: lib/*.js
 	$(COMPILE) -f es -o $@ -e haunted lib/haunted-router.js
-	sed -i.bu 's/haunted/https:\/\/unpkg\.com\/haunted@beta\/haunted\.js/' $@
+	sed -i.bu 's/haunted/https:\/\/unpkg\.com\/haunted@beta\/core\.js/' $@
 	rm -f $@.bu
 
 web.js: haunted-router.js
-	sed 's/https:\/\/unpkg\.com\/haunted@beta\/haunted\.js/\.\.\/haunted\/haunted\.js/' $^ > $@
+	sed 's/https:\/\/unpkg\.com\/haunted@beta\/core\.js/\.\.\/haunted\/core\.js/' $^ > $@
 
 clean:
 	@rm -rf lib haunted-router.js web.js
