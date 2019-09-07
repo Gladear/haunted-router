@@ -6,7 +6,8 @@
   "module": "lib/haunted-router.js",
   "typings": "typings/haunted-router.d.ts",
   "scripts": {
-    "build": "make"
+    "build": "make",
+    "preversion": "make"
   },
   "peerDependencies": {
     "haunted": "beta"
