@@ -9,6 +9,7 @@
     "start": "es-dev-server --port 1991 --app-index test/test.html",
     "build": "make",
     "preversion": "make",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "test": "mocha-headless-chrome -f http://localhost:1991/test/test.html"
   },
   "peerDependencies": {
@@ -37,6 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@matthewp/compile": "^2.4.3",
+    "conventional-changelog-cli": "^2.0.23",
     "es-dev-server": "^1.17.2",
     "mocha-headless-chrome": "^2.0.3",
     "typescript": "^3.6.2"
