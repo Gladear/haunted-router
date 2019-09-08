@@ -113,10 +113,10 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      useRoutes({
-        '/foo': () => (actual = expected),
-        '*': () => (actual = 1),
-      });
+      actual = useRoutes({
+        '/foo': () => expected,
+        '*': () => 1,
+      }, 2);
 
       return html`Test`;
     }
@@ -148,9 +148,9 @@ describe('useRoutes', () => {
     customElements.define(parentTag, component(Parent));
 
     function Child() {
-      useRoutes({
-        '/bar': () => (actual = expected),
-        'bar': () => (actual = 2),
+      actual = useRoutes({
+        '/bar': () => expected,
+        'bar': () => 2,
       }, 10);
 
       return html`Test`;
@@ -173,9 +173,9 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      useRoutes({
-        '/foo/:foo/:baz/baz': params => (actual = params),
-      });
+      actual = useRoutes({
+        '/foo/:foo/:baz/baz': params => params,
+      }, 'wrong');
 
       return html`Test`;
     }
@@ -197,9 +197,9 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      useRoutes({
-        '*': (_, state) => (actual = state),
-      });
+      actual = useRoutes({
+        '*': (_, state) => state,
+      }, 'wrong');
 
       return html`Test`;
     }
