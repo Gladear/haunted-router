@@ -1,10 +1,8 @@
 import { navigateTo } from '../haunted-router.js';
 import { cycle, waitPopState } from './helpers.js';
 
-function attachLink(attributes) {
+function attachLink() {
   const el = document.createElement('a', { is: 'router-link' });
-  Object.assign(el, attributes);
-
   host.appendChild(el);
   return [el, () => host.removeChild(el)];
 }
@@ -12,7 +10,7 @@ function attachLink(attributes) {
 describe('router-link', () => {
   it('Mounts', async () => {
     try {
-      const [, teardown] = attachLink({});
+      const [, teardown] = attachLink();
       await cycle();
 
       teardown();
@@ -23,9 +21,8 @@ describe('router-link', () => {
 
   it('Navigates to the url', () => {
     const url = '/link-navigation-test';
-    const [el, teardown] = attachLink({
-      href: url,
-    });
+    const [el, teardown] = attachLink();
+    el.href = url;
 
     el.click();
 
@@ -37,10 +34,8 @@ describe('router-link', () => {
   it('Defines the state', () => {
     const url = '/link-state-test';
     const state = 'link-state-test';
-    const [el, teardown] = attachLink({
-      href: url,
-      state,
-    });
+    const [el, teardown] = attachLink();
+    Object.assign(el, { href: url, state });
 
     el.click();
 
@@ -52,9 +47,8 @@ describe('router-link', () => {
   it('Creates an entry in the history', async () => {
     const { pathname: original } = location;
     const url = '/link-history-entry-test';
-    const [el, teardown] = attachLink({
-      href: url,
-    });
+    const [el, teardown] = attachLink();
+    el.href = url;
 
     el.click();
 
@@ -72,10 +66,9 @@ describe('router-link', () => {
     const { pathname: original } = location;
     const secondUrl = '/url-entry-test';
 
-    const [el, teardown] = attachLink({
-      href: secondUrl,
-      replace: true,
-    });
+    const [el, teardown] = attachLink();
+    el.href = secondUrl;
+    el.setAttribute('replace', '');
 
     navigateTo('/temporary-url');
 
