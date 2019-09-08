@@ -1,0 +1,8 @@
+language: node_js
+node_js: node
+addons:
+  chrome: stable
+before_script:
+  - npm start &
+  - npm run build
+  - sleep 3
