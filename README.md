@@ -20,7 +20,7 @@ import { useRoutes, useTitle, navigateTo, replaceTo } from 'haunted-router';
 
 **Haunted Router** can also work directly in the browser without using any build tools. Simply import the `haunted-router.js` bundle. Here's an example with unpkg:
 ```javascript
-import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router@^0.0.1/haunted-router.js';
+import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router/haunted-router.js';
 ```
 
 If you install **Haunted Router** locally, this build is located at `node_modules/haunted-router/haunted-router.js`.
