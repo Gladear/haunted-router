@@ -18,10 +18,9 @@ useRoutes({
   '/': () => 0,
   '/page': () => 1,
 }, 2);
-useRoutes({}, undefined);
+useRoutes({});
 // negative tests, shouldn't pass
 useRoutes();
-useRoutes({});
 useRoutes(/path/, 3);
 useRoutes({}, undefined, 'unused parameter');
 
