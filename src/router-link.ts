@@ -2,7 +2,7 @@ import { navigateTo, replaceTo } from './navigation';
 
 function clickHandler(this: RouterLink, ev: Event) {
   ev.preventDefault();
-  let fn = this.hasAttribute('replace') ? replaceTo : navigateTo;
+  let fn = this.replace ? replaceTo : navigateTo;
   fn(this.href, this.state);
 }
 
@@ -16,6 +16,18 @@ class RouterLink extends HTMLAnchorElement {
 
   disconnectedCallback() {
     this.removeEventListener('click', clickHandler);
+  }
+
+  get replace() {
+    return this.hasAttribute('replace');
+  }
+
+  set replace(val: boolean) {
+    if (val) {
+      this.setAttribute('replace', '');
+    } else {
+      this.removeAttribute('replace');
+    }
   }
 }
 
