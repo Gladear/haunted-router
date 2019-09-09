@@ -4,7 +4,7 @@
   "description": "A client-side router for Haunted",
   "main": "lib/haunted-router.js",
   "module": "lib/haunted-router.js",
-  "typings": "typings/haunted-router.d.ts",
+  "typings": "lib/haunted-router.d.ts",
   "scripts": {
     "start": "es-dev-server --port 1991 --app-index test/test.html",
     "build": "make",
@@ -24,8 +24,7 @@
   "files": [
     "haunted-router.js",
     "web.js",
-    "lib",
-    "typings"
+    "lib"
   ],
   "homepage": "https://github.com/Gladear/haunted-router#readme",
   "bugs": {

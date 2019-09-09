@@ -1,6 +1,5 @@
 node_modules/
 .rpt2_cache/
 lib/
-typings/
 haunted-router.js
 web.js
