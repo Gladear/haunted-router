@@ -92,7 +92,7 @@ return html`
 // Or
 import { navigateTo, replaceTo } from 'haunted-router';
 
-navigateTo('/url/to/destination', { foo: 'bar' }, 'Destination page');
+navigateTo('/url/to/destination', { foo: 'bar' });
 replaceTo('/url/to/second-tab');
 
 ```
