@@ -58,14 +58,14 @@ interface Routes<T> {
   [path: string]: RouteCallback<T>;
 }
 
-const useRoutes = hook(class<T> extends Hook {
+const useRoutes = hook(class<T> extends Hook<[Routes<T>, T], T> {
   fallback: T;
   _routes: Route<T>[];
   _result!: T;
 
-  constructor(id: number, state: State, routes: Routes<T>, fallback?: T) {
+  constructor(id: number, state: State, routes: Routes<T>, fallback: T) {
     super(id, state);
-    this.fallback = fallback!;
+    this.fallback = fallback;
     this._routes = Object.entries(routes).map(createRouteEntry);
   }
 
