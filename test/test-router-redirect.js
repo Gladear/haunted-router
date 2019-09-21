@@ -1,4 +1,4 @@
-import { component, html } from 'https://unpkg.com/haunted@beta/haunted.js';
+import { component, html } from 'https://unpkg.com/haunted@^4.6.0/haunted.js';
 import { navigateTo } from '../haunted-router.js';
 import { attach, cycle, waitPopState } from './helpers.js';
 

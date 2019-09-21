@@ -13,7 +13,7 @@
     "test": "mocha-headless-chrome -f http://localhost:1991/test/test.html"
   },
   "peerDependencies": {
-    "haunted": "beta"
+    "haunted": "^4.6.0"
   },
   "keywords": [
     "router",
@@ -38,8 +38,9 @@
   "devDependencies": {
     "@matthewp/compile": "^2.4.3",
     "conventional-changelog-cli": "^2.0.23",
-    "es-dev-server": "^1.17.2",
+    "es-dev-server": "^1.18.0",
+    "haunted": "^4.6.0",
     "mocha-headless-chrome": "^2.0.3",
-    "typescript": "^3.6.2"
+    "typescript": "^3.6.3"
   }
 }

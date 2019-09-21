@@ -18,10 +18,12 @@ useRoutes({
   '/': () => 0,
   '/page': () => 1,
 }, 2);
-useRoutes({}, undefined);
+useRoutes({});
 // negative tests, shouldn't pass
 useRoutes();
-useRoutes({});
+useRoutes({
+  '/': () => 'a string',
+}, 0);
 useRoutes(/path/, 3);
 useRoutes({}, undefined, 'unused parameter');
 
@@ -37,7 +39,7 @@ useTitle('My title', 5);
 // positive tests, should pass
 navigateTo('/');
 navigateTo('/home', 'newState');
-navigateTo('/about', { my: 'state' }, 'About page');
+navigateTo('/about', { my: 'state' });
 // negative tests, shouldn't pass
 navigateTo();
 navigateTo(6);
@@ -47,7 +49,7 @@ navigateTo('/', {}, 7);
 // positive tests, should pass
 replaceTo('/');
 replaceTo('/home', 'newState');
-replaceTo('/about', { my: 'state' }, 'About page');
+replaceTo('/about', { my: 'state' });
 // negative tests, shouldn't pass
 replaceTo();
 replaceTo(8);

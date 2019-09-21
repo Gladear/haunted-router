@@ -1,11 +1,6 @@
-import haunted from 'https://unpkg.com/haunted@beta/core.js';
-import { html, nothing, render } from 'https://unpkg.com/lit-html@^1.0.0/lit-html.js';
-
-// import { component, html } from 'https://unpkg.com/haunted@beta/haunted.js';
+import { component, html } from 'https://unpkg.com/haunted@^4.6.0/haunted.js';
 import { useRoutes, navigateTo, replaceTo } from '../haunted-router.js';
 import { attach, cycle } from './helpers.js';
-
-const { component } = haunted({ render });
 
 describe('useRoutes', () => {
   it('Executes the matching function', async () => {
@@ -141,7 +136,7 @@ describe('useRoutes', () => {
     function Parent() {
       const route = useRoutes({
         '/foo*': () => html`<child-routes-test />`,
-      }, nothing);
+      }, html``);
 
       return route;
     }
