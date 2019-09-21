@@ -1,6 +1,6 @@
 {
   "name": "haunted-router",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A client-side router for Haunted",
   "main": "lib/haunted-router.js",
   "module": "lib/haunted-router.js",
