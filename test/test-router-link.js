@@ -1,5 +1,6 @@
 import { navigateTo } from '../haunted-router.js';
 import { cycle, waitPopState } from './helpers.js';
+import '../lib/router-link.js';
 
 function attachLink() {
   const el = document.createElement('a', { is: 'router-link' });
