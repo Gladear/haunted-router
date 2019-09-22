@@ -103,6 +103,23 @@ return html`
 
 > ⚠️ As custom built-in elements have poor [browser support](https://caniuse.com/#feat=mdn-api_customelementregistry_builtin), the `router-link` custom built-in element is not automatically loaded. The behavior can however be polyfilled (see [Browser Support](#browser-support)). To use it, you must import `haunted-router/lib/router-link.js` once.
 
+### Redirect
+
+You can use the `router-redirect` custom element to redirect the user to a URL.
+Add the `replace` attribute to prevent creating an history entry.
+
+Example:
+```javascript
+import { html } from 'lit-html';
+
+return html`
+  <router-redirect href="/url/to/destination" />
+  <router-redirect href="/new/replaced/url" replace />
+`;
+```
+
+> ⚠️ The `router-redirect` custom element is optional. To use it, import `haunted-router/lib/router-redirect.js` once.
+
 ## Complete example
 
 _main.js_
