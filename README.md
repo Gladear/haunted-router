@@ -1,6 +1,7 @@
 # Haunted Router for Haunted 🦇 🎃
 
 [![npm](https://img.shields.io/npm/v/haunted-router)](https://npm.im/haunted-router)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/haunted-router)
 [![Build Status](https://travis-ci.org/Gladear/haunted-router.svg?branch=master)](https://travis-ci.org/Gladear/haunted-router)
 
 A client-side router for [**Haunted**](https://github.com/matthewp/haunted).
