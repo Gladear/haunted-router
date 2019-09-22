@@ -86,21 +86,22 @@ There are two ways to navigate using **haunted-router**:
 
 Example:
 ```javascript
+import { navigateTo, replaceTo } from 'haunted-router';
+
+navigateTo('/url/to/destination', { foo: 'bar' });
+replaceTo('/url/to/second-tab');
+
+// Or
 import { html } from 'lit-html';
 
 return html`
   <a is="router-link" href="/url/to/destination" .state=${{ foo: 'bar' }}></a>
   <a is="router-link" href="/url/to/second-tab" replace></a>
 `;
-
-// Or
-import { navigateTo, replaceTo } from 'haunted-router';
-
-navigateTo('/url/to/destination', { foo: 'bar' });
-replaceTo('/url/to/second-tab');
-
 ```
 `state` can be of any type and is optional.
+
+> ⚠️ As custom built-in elements have poor [browser support](https://caniuse.com/#feat=mdn-api_customelementregistry_builtin), the `router-link` custom built-in element is not automatically loaded. The behavior can however be polyfilled (see [Browser Support](#browser-support)). To use it, you must import `haunted-router/lib/router-link.js` once.
 
 ## Complete example
 
