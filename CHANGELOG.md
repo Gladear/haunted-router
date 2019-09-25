@@ -10,7 +10,6 @@
 
 * **components:** reflect properties to attributes ([0153ecf](https://github.com/Gladear/haunted-router/commit/0153ecf))
 * **router-redirect:** create custom element ([130c72b](https://github.com/Gladear/haunted-router/commit/130c72b))
-* **useRoutes:** make fallback optional ([202d3b0](https://github.com/Gladear/haunted-router/commit/202d3b0))
 
 
 
