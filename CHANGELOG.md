@@ -1,3 +1,24 @@
+## [0.1.1-beta.0](https://github.com/Gladear/haunted-router/compare/v0.1.0...v0.1.1-beta.0) (2019-10-02)
+
+
+### chore
+
+* refactor build ([7488b88](https://github.com/Gladear/haunted-router/commit/7488b88))
+
+
+### Features
+
+* **router-link:** don't load in main entrypoint ([a9c86d6](https://github.com/Gladear/haunted-router/commit/a9c86d6))
+* **router-redirect:** don't load automatically ([41686b1](https://github.com/Gladear/haunted-router/commit/41686b1))
+
+
+### BREAKING CHANGES
+
+* remove web.js entrypoint
+* **router-link:** router-link is not automatically loaded anymore
+
+
+
 # [0.1.0](https://github.com/Gladear/haunted-router/compare/v0.0.2...v0.1.0) (2019-09-21)
 
 
