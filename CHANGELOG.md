@@ -1,3 +1,7 @@
+## [0.1.1](https://github.com/Gladear/haunted-router/compare/v0.1.1-beta.0...v0.1.1) (2019-10-02)
+
+
+
 ## [0.1.1-beta.0](https://github.com/Gladear/haunted-router/compare/v0.1.0...v0.1.1-beta.0) (2019-10-02)
 
 
