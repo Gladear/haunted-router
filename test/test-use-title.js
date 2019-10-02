@@ -1,5 +1,5 @@
-import { component, html } from 'https://unpkg.com/haunted@^4.6.0/haunted.js';
-import { useTitle } from '../haunted-router.js';
+import { component, html } from 'haunted';
+import { useTitle } from '../src/use-title.ts';
 import { attach, cycle } from './helpers.js';
 
 describe('useTitle', () => {

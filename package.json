@@ -2,11 +2,11 @@
   "name": "haunted-router",
   "version": "0.1.0",
   "description": "A client-side router for Haunted",
-  "main": "lib/haunted-router.js",
-  "module": "lib/haunted-router.js",
-  "typings": "lib/haunted-router.d.ts",
+  "main": "haunted-router.js",
+  "module": "haunted-router.js",
+  "typings": "haunted-router.d.ts",
   "scripts": {
-    "start": "es-dev-server --port 1991 --app-index test/test.html",
+    "start": "es-dev-server --port 1991 --file-extensions .ts --node-resolve --babel",
     "build": "make",
     "preversion": "make",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
@@ -22,8 +22,8 @@
   ],
   "author": "Enzo Baldisserri",
   "files": [
+    "haunted-router.d.ts",
     "haunted-router.js",
-    "web.js",
     "lib"
   ],
   "homepage": "https://github.com/Gladear/haunted-router#readme",
@@ -36,7 +36,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@matthewp/compile": "^2.4.3",
+    "@babel/preset-typescript": "^7.6.0",
     "conventional-changelog-cli": "^2.0.23",
     "es-dev-server": "^1.18.0",
     "haunted": "^4.6.0",

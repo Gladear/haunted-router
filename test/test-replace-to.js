@@ -1,4 +1,4 @@
-import { replaceTo, navigateTo } from '../haunted-router.js';
+import { replaceTo, navigateTo } from '../src/navigation.ts';
 import { waitPopState } from './helpers.js';
 
 describe('replaceTo', () => {

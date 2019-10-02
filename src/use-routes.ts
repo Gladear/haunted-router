@@ -1,5 +1,5 @@
 import { hook, Hook, State } from 'haunted';
-import { addCurrent, removeCurrent } from './router.js';
+import { addCurrent, removeCurrent } from './router';
 
 interface Route<T> {
   callback: RouteCallback<T>;

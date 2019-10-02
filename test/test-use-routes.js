@@ -1,5 +1,6 @@
-import { component, html } from 'https://unpkg.com/haunted@^4.6.0/haunted.js';
-import { useRoutes, navigateTo, replaceTo } from '../haunted-router.js';
+import { component, html } from 'haunted';
+import { navigateTo, replaceTo } from '../src/navigation.ts';
+import { useRoutes } from '../src/use-routes.ts';
 import { attach, cycle } from './helpers.js';
 
 describe('useRoutes', () => {

@@ -1,7 +1,7 @@
-import { component, html } from 'https://unpkg.com/haunted@^4.6.0/haunted.js';
-import { navigateTo } from '../haunted-router.js';
+import { component, html } from 'haunted';
+import { navigateTo } from '../src/navigation.ts';
 import { attach, cycle, waitPopState } from './helpers.js';
-import '../lib/router-redirect.js';
+import '../src/router-redirect.ts';
 
 describe('router-redirect', () => {
   it('Redirects to the url', async () => {
