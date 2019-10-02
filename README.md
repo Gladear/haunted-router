@@ -22,12 +22,10 @@ If using a bundler, **Haunted Router** can be imported like any other library:
 import { useRoutes, useTitle, navigateTo, replaceTo } from 'haunted-router';
 ```
 
-**Haunted Router** can also work directly in the browser without using any build tools. Simply import the `haunted-router.js` bundle. Here's an example with unpkg:
+**Haunted Router** can also work directly in the browser without using any build tools. Here's an example with unpkg:
 ```javascript
-import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router/haunted-router.js';
+import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router?module';
 ```
-
-If you install **Haunted Router** locally, this build is located at `node_modules/haunted-router/haunted-router.js`.
 
 ## Usage
 
