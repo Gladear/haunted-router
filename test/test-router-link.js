@@ -1,6 +1,6 @@
-import { navigateTo } from '../src/navigation.ts';
+import { navigateTo } from '../lib/navigation.js';
 import { cycle, waitPopState } from './helpers.js';
-import '../src/router-link.ts';
+import '../lib/router-link.js';
 
 function attachLink() {
   const el = document.createElement('a', { is: 'router-link' });

@@ -36,7 +36,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/preset-typescript": "^7.6.0",
     "conventional-changelog-cli": "^2.0.23",
     "es-dev-server": "^1.18.0",
     "haunted": "^4.6.0",

@@ -1,7 +1,7 @@
 import { component, html } from 'haunted';
-import { navigateTo } from '../src/navigation.ts';
+import { navigateTo } from '../lib/navigation.js';
 import { attach, cycle, waitPopState } from './helpers.js';
-import '../src/router-redirect.ts';
+import '../lib/router-redirect.js';
 
 describe('router-redirect', () => {
   it('Redirects to the url', async () => {

@@ -1,4 +1,4 @@
-import { navigateTo } from '../src/navigation.ts';
+import { navigateTo } from '../lib/navigation.js';
 import { waitPopState } from './helpers.js';
 
 describe('navigateTo', () => {
