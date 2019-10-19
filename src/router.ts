@@ -4,8 +4,8 @@ interface RouterHook extends Hook {
   matches(pathname: string): readonly [boolean, number];
 }
 
-let hookPath: RouterHook[] = [];
-let farthestPath = location.pathname;
+let hookPath: RouterHook[] = [],
+  farthestPath = location.pathname;
 
 function addCurrent(hook: RouterHook) {
   if (hookPath.includes(hook)) return;
@@ -21,11 +21,11 @@ function removeCurrent(hook: RouterHook) {
 }
 
 function update() {
-  let matches, baseIndex = 0;
+  let matches, baseIndex;
   farthestPath = location.pathname;
 
   for (let [index, hook] of hookPath.entries()) {
-    ([matches, baseIndex] = hook.matches(farthestPath));
+    [matches, baseIndex] = hook.matches(farthestPath);
     hook.state.update();
     if (!matches) {
       hookPath.splice(index);
