@@ -1,4 +1,4 @@
-import { navigateTo } from '../lib/navigation.js';
+import { navigateTo } from '../haunted-router.js';
 import { cycle, waitPopState } from './helpers.js';
 import '../lib/router-link.js';
 

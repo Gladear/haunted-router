@@ -1,5 +1,5 @@
 import { component, html } from 'haunted';
-import { navigateTo } from '../lib/navigation.js';
+import { navigateTo } from '../haunted-router.js';
 import { attach, cycle, waitPopState } from './helpers.js';
 import '../lib/router-redirect.js';
 

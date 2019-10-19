@@ -1,5 +1,5 @@
 import { component, html } from 'haunted';
-import { useTitle } from '../lib/use-title.js';
+import { useTitle } from '../haunted-router.js';
 import { attach, cycle } from './helpers.js';
 
 describe('useTitle', () => {

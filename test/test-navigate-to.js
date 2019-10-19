@@ -1,4 +1,4 @@
-import { navigateTo } from '../lib/navigation.js';
+import { navigateTo } from '../haunted-router.js';
 import { waitPopState } from './helpers.js';
 
 describe('navigateTo', () => {

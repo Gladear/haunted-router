@@ -1,6 +1,5 @@
 import { component, html } from 'haunted';
-import { navigateTo, replaceTo } from '../lib/navigation.js';
-import { useRoutes } from '../lib/use-routes.js';
+import { useRoutes, navigateTo, replaceTo } from '../haunted-router.js';
 import { attach, cycle } from './helpers.js';
 
 describe('useRoutes', () => {
