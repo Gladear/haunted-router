@@ -6,16 +6,22 @@ import { attach, cycle } from './helpers.js';
 describe('useRoutes', () => {
   it('Executes the matching function', async () => {
     const tag = 'matching-function-routes-test';
-    const expectedFoo = 0, expectedBar = 1;
+    const expectedFoo = 0,
+      expectedBar = 1;
     let actual;
 
     function App() {
-      actual = useRoutes({
-        '/foo': () => expectedFoo,
-        '/bar': () => expectedBar,
-      }, -1);
+      actual = useRoutes(
+        {
+          '/foo': () => expectedFoo,
+          '/bar': () => expectedBar,
+        },
+        -1,
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -24,12 +30,12 @@ describe('useRoutes', () => {
     const teardown = attach(tag);
     await cycle();
 
-    assert.strictEqual(actual, expectedFoo, 'The function matching /foo wasn\'t executed');
+    assert.strictEqual(actual, expectedFoo, "The function matching /foo wasn't executed");
 
     replaceTo('/bar');
     await cycle();
 
-    assert.strictEqual(actual, expectedBar, 'The function matching /bar wasn\'t executed');
+    assert.strictEqual(actual, expectedBar, "The function matching /bar wasn't executed");
 
     teardown();
   });
@@ -40,12 +46,17 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      actual = useRoutes({
-        '/foo': () => 2,
-        '/bar': () => 3,
-      }, expected);
+      actual = useRoutes(
+        {
+          '/foo': () => 2,
+          '/bar': () => 3,
+        },
+        expected,
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -67,7 +78,9 @@ describe('useRoutes', () => {
     function App() {
       actual = useRoutes({ '/foo*': () => expected }, 2);
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -89,7 +102,9 @@ describe('useRoutes', () => {
     function App() {
       actual = useRoutes({ '*': () => expected }, 2);
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -109,12 +124,17 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      actual = useRoutes({
-        '/foo': () => expected,
-        '*': () => 1,
-      }, 2);
+      actual = useRoutes(
+        {
+          '/foo': () => expected,
+          '*': () => 1,
+        },
+        2,
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -135,21 +155,32 @@ describe('useRoutes', () => {
     let actual;
 
     function Parent() {
-      const route = useRoutes({
-        '/foo*': () => html`<child-routes-test />`,
-      }, html``);
+      const route = useRoutes(
+        {
+          '/foo*': () =>
+            html`
+              <child-routes-test />
+            `,
+        },
+        html``,
+      );
 
       return route;
     }
     customElements.define(parentTag, component(Parent));
 
     function Child() {
-      actual = useRoutes({
-        '/bar': () => expected,
-        'bar': () => 2,
-      }, 10);
+      actual = useRoutes(
+        {
+          '/bar': () => expected,
+          bar: () => 2,
+        },
+        10,
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(childTag, component(Child));
 
@@ -169,11 +200,16 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      actual = useRoutes({
-        '/foo/:foo/:baz/baz': params => params,
-      }, 'wrong');
+      actual = useRoutes(
+        {
+          '/foo/:foo/:baz/baz': params => params,
+        },
+        'wrong',
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -193,11 +229,16 @@ describe('useRoutes', () => {
     let actual;
 
     function App() {
-      actual = useRoutes({
-        '*': (_, state) => state,
-      }, 'wrong');
+      actual = useRoutes(
+        {
+          '*': (_, state) => state,
+        },
+        'wrong',
+      );
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -206,7 +247,7 @@ describe('useRoutes', () => {
     const teardown = attach(tag);
     await cycle();
 
-    assert.deepEqual(actual, expected, 'It didn\'t pass the new state');
+    assert.deepEqual(actual, expected, "It didn't pass the new state");
 
     teardown();
   });

@@ -9,7 +9,9 @@ describe('router-redirect', () => {
     const url = '/redirect-url-test';
 
     function App() {
-      return html`<router-redirect .url=${url} />`;
+      return html`
+        <router-redirect .url=${url} />
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -26,7 +28,9 @@ describe('router-redirect', () => {
     const { pathname: original } = location;
 
     function App() {
-      return html`<router-redirect .url=${'/redirect-entry-url-test'} />`;
+      return html`
+        <router-redirect .url=${'/redirect-entry-url-test'} />
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -43,12 +47,14 @@ describe('router-redirect', () => {
     teardown();
   });
 
-  it('Doesn\'t create an history entry with `replace`', async () => {
+  it("Doesn't create an history entry with `replace`", async () => {
     const tag = 'replace-entry-redirect-test';
     const { pathname: original } = location;
 
     function App() {
-      return html`<router-redirect ?replace=${true} .url=${'/replace-entry-redirect-test'} />`;
+      return html`
+        <router-redirect ?replace=${true} .url=${'/replace-entry-redirect-test'} />
+      `;
     }
     customElements.define(tag, component(App));
 

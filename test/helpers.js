@@ -1,10 +1,10 @@
-export function attach(element) {
+function attach(element) {
   let el = document.createElement(element);
   host.appendChild(el);
   return () => host.removeChild(el);
 }
 
-export function cycle() {
+async function cycle() {
   return new Promise(resolve => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -16,9 +16,11 @@ export function cycle() {
   });
 }
 
-export function waitPopState() {
+async function waitPopState() {
   return new Promise((resolve, reject) => {
     window.addEventListener('popstate', resolve, { once: true });
     setTimeout(reject, 1000);
   });
 }
+
+export { attach, cycle, waitPopState };

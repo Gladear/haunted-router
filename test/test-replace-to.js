@@ -7,7 +7,7 @@ describe('replaceTo', () => {
 
     replaceTo(url);
 
-    assert.strictEqual(location.pathname, url, 'The current location isn\'t the one requested');
+    assert.strictEqual(location.pathname, url, "The current location isn't the one requested");
   });
 
   it('Modifies the state of the history', () => {
@@ -15,7 +15,7 @@ describe('replaceTo', () => {
 
     replaceTo('/temporary-url', state);
 
-    assert.strictEqual(history.state, state, 'The state isn\'t the same as the one provided')
+    assert.strictEqual(history.state, state, "The state isn't the same as the one provided");
   });
 
   it('Does not create an entry in the history', async () => {
@@ -33,13 +33,21 @@ describe('replaceTo', () => {
 
     await popState;
 
-    assert.strictEqual(location.pathname, url, 'The current location is not the same as the replaced url');
+    assert.strictEqual(
+      location.pathname,
+      url,
+      'The current location is not the same as the replaced url',
+    );
 
     popState = waitPopState();
     history.back();
 
     await popState;
 
-    assert.strictEqual(location.pathname, originalUrl, 'The current location is not the same as the original');
+    assert.strictEqual(
+      location.pathname,
+      originalUrl,
+      'The current location is not the same as the original',
+    );
   });
 });

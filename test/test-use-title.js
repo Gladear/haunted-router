@@ -10,14 +10,16 @@ describe('useTitle', () => {
     function App() {
       useTitle(title);
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
     let teardown = attach(tag);
     await cycle();
 
-    assert.strictEqual(document.title, title, 'The title wasn\'t modified');
+    assert.strictEqual(document.title, title, "The title wasn't modified");
 
     teardown();
   });
@@ -30,7 +32,9 @@ describe('useTitle', () => {
     function App() {
       useTitle(title);
 
-      return html`Test`;
+      return html`
+        Test
+      `;
     }
     customElements.define(tag, component(App));
 
@@ -40,6 +44,6 @@ describe('useTitle', () => {
     teardown();
     await cycle();
 
-    assert.strictEqual(document.title, original, 'The title wasn\'t reverted to the original');
+    assert.strictEqual(document.title, original, "The title wasn't reverted to the original");
   });
 });

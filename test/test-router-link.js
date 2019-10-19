@@ -63,7 +63,7 @@ describe('router-link', () => {
     teardown();
   });
 
-  it('Doesn\'t create an history entry with `replace`', async () => {
+  it("Doesn't create an history entry with `replace`", async () => {
     const { pathname: original } = location;
     const secondUrl = '/url-entry-test';
 

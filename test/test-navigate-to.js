@@ -7,7 +7,7 @@ describe('navigateTo', () => {
 
     navigateTo(url);
 
-    assert.strictEqual(location.pathname, url, 'The current location isn\'t the one requested');
+    assert.strictEqual(location.pathname, url, "The current location isn't the one requested");
   });
 
   it('Modifies the state of the history', () => {
@@ -15,7 +15,7 @@ describe('navigateTo', () => {
 
     navigateTo('/temporary-url', state);
 
-    assert.strictEqual(history.state, state, 'The state isn\'t the same as the one provided')
+    assert.strictEqual(history.state, state, "The state isn't the same as the one provided");
   });
 
   it('Creates an entry in the history', async () => {
@@ -28,6 +28,10 @@ describe('navigateTo', () => {
 
     await promise;
 
-    assert.strictEqual(location.pathname, original, 'The current location isn\'t the same as the original');
+    assert.strictEqual(
+      location.pathname,
+      original,
+      "The current location isn't the same as the original",
+    );
   });
 });
