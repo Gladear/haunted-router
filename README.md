@@ -22,7 +22,7 @@ If using a bundler, **Haunted Router** can be imported like any other library:
 import { useRoutes, useTitle, navigateTo, replaceTo } from 'haunted-router';
 ```
 
-**Haunted Router** can also work directly in the browser without using any build tools. Here's an example with unpkg:
+**Haunted Router** can also work directly in the browser without using any build tool. Here's an example with **unpkg**:
 ```javascript
 import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/haunted-router?module';
 ```
@@ -32,7 +32,7 @@ import { useRoutes, useTitle, navigateTo, replaceTo } from 'https://unpkg.com/ha
 ### Define the routes
 
 Routes are defined using the `useRoutes` hook.
-It takes an object as a parameter, along with a fallback value.
+It takes an object as parameter, along with a fallback value.
 
 The keys of the object are the paths to be matched, while the values are functions to be executed when the paths are matched.
 The value returned by the hook is the same as the one returned by the function.
@@ -99,12 +99,12 @@ return html`
 ```
 `state` can be of any type and is optional.
 
-> ⚠️ As custom built-in elements have poor [browser support](https://caniuse.com/#feat=mdn-api_customelementregistry_builtin), the `router-link` custom built-in element is not automatically loaded. The behavior can however be polyfilled (see [Browser Support](#browser-support)). To use it, you must import `haunted-router/lib/router-link.js` once.
+> ⚠️ As custom built-in elements have poor [browser support](https://caniuse.com/#feat=mdn-api_customelementregistry_builtin), the `router-link` custom built-in element is not automatically loaded. The behavior can however be polyfilled (see [Browser Support](#browser-support)). To use it, import `haunted-router/lib/router-link.js` once.
 
 ### Redirect
 
 You can use the `router-redirect` custom element to redirect the user to a URL.
-Add the `replace` attribute to prevent creating an history entry.
+Add the `replace` attribute to prevent creating an entry in the history.
 
 Example:
 ```javascript
@@ -145,7 +145,7 @@ _router.js_
 ```javascript
 const mainRoutes = {
   // A plain url
-  // Every top level URL begins with a slash
+  // Every top level URL must begin with a slash
   '/': () => html`<x-page-home></x-page-home>`,
 
   // An URL with parameters
@@ -195,7 +195,7 @@ customElements.define('x-page-account', component(PageAccount));
 
 ## Browser support
 
-See **Haunted** browser support and required polyfills in the [README](https://github.com/matthewp/haunted#use) of the repository.
+See **Haunted**'s browser support for required polyfills in the [README](https://github.com/matthewp/haunted#use) of the repository.
 
 **Haunted Router** supports all browsers that support [custom built-in elements](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#Browser_compatibility).
 > ⚠️ Safari and Edge <= 18 do not support these, but the behavior can be polyfilled, for example, using the lightweight [@ungap/custom-elements-builtin](https://github.com/ungap/custom-elements-builtin).
