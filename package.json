@@ -36,10 +36,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "conventional-changelog-cli": "^2.0.23",
-    "es-dev-server": "^1.18.0",
-    "haunted": "^4.6.0",
+    "conventional-changelog-cli": "^2.0.25",
+    "es-dev-server": "^1.18.4",
+    "haunted": "^4.6.1",
     "mocha-headless-chrome": "^2.0.3",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.4"
   }
 }
