@@ -193,6 +193,42 @@ describe('useRoutes', () => {
     teardown();
   });
 
+  it('Allows to navigate to a sibling route', async () => {
+    const tag = 'navigate-sibling-routes-test';
+    const expected1 = 1,
+      expected2 = 2;
+    let actual;
+
+    function App() {
+      actual = useRoutes(
+        {
+          '/foo': () => expected1,
+          '/bar': () => expected2,
+        },
+        3,
+      );
+
+      return html`
+        Test
+      `;
+    }
+    customElements.define(tag, component(App));
+
+    navigateTo('/foo');
+
+    const teardown = attach(tag);
+    await cycle();
+
+    assert.equal(actual, expected1, "It didn't match the route");
+
+    navigateTo('/bar');
+    await cycle();
+
+    assert.equal(actual, expected2, "It couldn't navigate to sibling");
+
+    teardown();
+  });
+
   it('Parses url params correctly', async () => {
     const tag = 'url-params-routes-test';
     const expected = { foo: 'bar', baz: 'foobar' };
