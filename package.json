@@ -6,7 +6,7 @@
   "module": "haunted-router.js",
   "typings": "haunted-router.d.ts",
   "scripts": {
-    "start": "es-dev-server --port 1991 --file-extensions .ts --node-resolve --babel",
+    "start": "es-dev-server --port 1991 --node-resolve",
     "build": "make",
     "preversion": "make",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
