@@ -3,7 +3,7 @@ import { addCurrent, removeCurrent } from './router';
 
 interface Route<T> {
   callback: RouteCallback<T>;
-  matcher: (path: string) => readonly [boolean, RouteParameters, number];
+  matcher: (path: string) => readonly [string | undefined, RouteParameters];
 }
 
 interface RouteParameters {
@@ -39,7 +39,7 @@ function createRouteEntry<T>([path, callback]: [string, RouteCallback<T>]): Rout
 
   const matcher = (path: string) => {
     const match = regex.exec(path);
-    if (!match) return [false, {}, 0] as const;
+    if (!match) return [undefined, {}] as const;
 
     const [string, ...values] = match;
     const params = names.reduce(
@@ -50,7 +50,7 @@ function createRouteEntry<T>([path, callback]: [string, RouteCallback<T>]): Rout
       {},
     );
 
-    return [true, params, string.length] as const;
+    return [string, params] as const;
   };
 
   return {
@@ -84,18 +84,17 @@ const useRoutes = hook(
       removeCurrent(this);
     }
 
-    matches(pathname: string) {
-      let match: boolean, params: RouteParameters, length: number;
+    matches(pathname: string): string | undefined {
+      let match: string | undefined, params: RouteParameters;
 
       for (const { matcher, callback } of this._routes) {
-        [match, params, length] = matcher(pathname);
-        if (!match) continue;
+        [match, params] = matcher(pathname);
+        if (match === undefined) continue;
         this._result = callback(params, history.state);
-        return [true, length] as const;
+        return match;
       }
 
       this._result = this.fallback;
-      return [false, 0] as const;
     }
   },
 );
