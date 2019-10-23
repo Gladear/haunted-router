@@ -24,17 +24,14 @@ function update() {
 
   for (let [hook, oldMatch] of hookPath.entries()) {
     match = hook.matches(farthestPath);
-    if (!match) {
-      hook.state.update();
-      break;
-    }
-
     if (oldMatch !== match) {
       hook.state.update();
+
+      if (match === undefined) break;
       hookPath.set(hook, match);
     }
 
-    farthestPath = farthestPath.slice(match.length);
+    farthestPath = farthestPath.slice(match!.length);
   }
 
   // Update the last item of the hook path anyway
