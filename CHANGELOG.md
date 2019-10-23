@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/Gladear/haunted-router/compare/v0.1.1...v0.1.2) (2019-10-23)
+
+
+### Bug Fixes
+
+* allow to navigate to nested routes ([3ecdc7b](https://github.com/Gladear/haunted-router/commit/3ecdc7b0cf75d95d617f4ed7e47020b1f97220b5))
+
+
+
 ## [0.1.1](https://github.com/Gladear/haunted-router/compare/v0.1.1-beta.0...v0.1.1) (2019-10-02)
 
 
