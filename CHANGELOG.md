@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/Gladear/haunted-router/compare/v0.1.2...v0.1.3) (2019-11-15)
+
+
+### Bug Fixes
+
+* **navigation:** update on popstate event ([992e82e](https://github.com/Gladear/haunted-router/commit/992e82eaabd5cc2d060e1d389a1e7c6b2be6ee87))
+
+
+
 ## [0.1.2](https://github.com/Gladear/haunted-router/compare/v0.1.1...v0.1.2) (2019-10-23)
 
 
