@@ -10,4 +10,6 @@ function replaceTo(url: string, state?: any) {
   update();
 }
 
+window.addEventListener('popstate', update);
+
 export { navigateTo, replaceTo };
