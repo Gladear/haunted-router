@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/Gladear/haunted-router/compare/v0.1.3...v0.2.0) (2019-12-18)
+
+
+### Features
+
+* **useSearchParams:** add useSearchParams hook ([56ec53a](https://github.com/Gladear/haunted-router/commit/56ec53a77d3cd8407bc2451279b18a7d17696919))
+
+
+
 ## [0.1.3](https://github.com/Gladear/haunted-router/compare/v0.1.2...v0.1.3) (2019-11-15)
 
 
