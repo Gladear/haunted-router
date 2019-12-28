@@ -230,6 +230,8 @@ See **Haunted**'s browser support for required polyfills in the [README](https:/
 **Haunted Router** supports all browsers that support [custom built-in elements](https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry#Browser_compatibility).
 > ⚠️ Safari and Edge <= 18 do not support these, but the behavior can be polyfilled, for example, using the lightweight [@ungap/custom-elements-builtin](https://github.com/ungap/custom-elements-builtin).
 
+If you choose not to use the `router-link` custom built-in element, the browser support is the same as **Haunted**.
+
 ## Insight
 The router merely executes the function that corresponds to the current route, and returns the result.
 It can be used to execute anything you want when the user navigates.
