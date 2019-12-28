@@ -57,6 +57,36 @@ function App() {
 }
 ```
 
+### Use the URL parameters
+
+You can get the parameters in of the URL using the `useSearchParams` hook. This hook takes no parameter, and returns an object containing the search parameters in the search string. All values are strings. Use object decomposition to assign default values.
+
+Example:
+```javascript
+function MyShoppingPage() {
+  const {
+    minPrice = 0,
+    maxPrice = Infinity,
+  } = useSearchParams();
+
+  return html`
+    Active filters:
+    <ul>
+      ${minPrice != 0
+        ? html`
+            <li>Minimum price: ${minPrice}</li>
+          `
+        : ''}
+      ${maxPrixe !== Infinity
+        ? html`
+            <li>Maximum price: ${maxPrice}</li>
+          `
+        : ''}
+    </ul>
+  `;
+}
+```
+
 ### Define the title
 
 The title of the document can be modified using the `useTitle` hook.
