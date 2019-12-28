@@ -6,6 +6,19 @@
 
 A client-side router for [**Haunted**](https://github.com/matthewp/haunted).
 
+## Table of contents
+
+- [Getting started](#getting-started)
+- [Usage](#usage)
+  - [Define the routes](#define-the-routes)
+  - [Use the URL parameters](#use-the-url-parameters)
+  - [Define the title](#define-the-title)
+  - [Navigate](#navigate)
+  - [Redirect](#redirect)
+- [Complete example](#complete-example)
+- [Browser support](#browser-support)
+- [Insight](#insight)
+
 ## Getting started
 
 ### Installing
