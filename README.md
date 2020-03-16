@@ -154,8 +154,8 @@ Example:
 import { html } from 'lit-html';
 
 return html`
-  <router-redirect href="/url/to/destination" />
-  <router-redirect href="/new/replaced/url" replace />
+  <router-redirect url="/url/to/destination" />
+  <router-redirect url="/new/replaced/url" replace />
 `;
 ```
 
