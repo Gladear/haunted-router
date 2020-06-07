@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/haunted-router)](https://npm.im/haunted-router)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/haunted-router)
-[![Build Status](https://travis-ci.org/Gladear/haunted-router.svg?branch=master)](https://travis-ci.org/Gladear/haunted-router)
+[![Build Status](https://github.com/Gladear/haunted-router/workflows/CI/badge.svg)](https://github.com/Gladear/haunted-router/commits/master)
 
 A client-side router for [**Haunted**](https://github.com/matthewp/haunted).
 
