@@ -37,9 +37,9 @@
   "license": "MIT",
   "devDependencies": {
     "conventional-changelog-cli": "^2.0.34",
-    "es-dev-server": "^1.54.1",
+    "es-dev-server": "^1.56.1",
     "haunted": "^4.7.0",
     "mocha-headless-chrome": "^2.0.3",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.7"
   }
 }
