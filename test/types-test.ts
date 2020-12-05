@@ -36,7 +36,6 @@ useRoutes(
   },
   2
 );
-useRoutes({});
 // negative tests, shouldn't pass
 useRoutes();
 useRoutes(
